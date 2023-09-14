@@ -1,18 +1,23 @@
-public = ["UCLA", "UCSD", "UC Fullerton", "UC Berkley"]
-private = ["Stanford", "Caltech", "USC"]
+colleges = ["Caltech", "UCLA", "Stanford", "UC Fullerton", "UC Berkley"]
 
-def addcol(public, private):
-    y_n = input("Would you like to add a college to the list? (y/n) ")
-    if y_n == "y":
-        new_col = input("What is the name of the new college? ")
-        col_type = input("Is this college 1) public or 2) private? ")
-        if col_type == "1":
-            public.append(new_col)
-            print("Here are your public colleges: ", public)
-            return public
-        elif col_type == "2":
-            private.append(new_col)
-            print("Here are your public colleges: ", private)
-            return private
+def addcol(colleges):
+    colleges.append(new_col)
+    return colleges
+    
+def delcol(colleges):
+    colleges.remove(app)
+    return colleges
 
-print("Your college list: ", addcol(public, private))
+y_n = input("Would you like to update your list? (y/n) ")
+while y_n == "y":
+    edit = input("Do you want to add or remove from your list? (a/r) ")
+    if edit == "a":
+        new_col = input("What is the name of the new college/university? ")
+        addcol(colleges)
+        y_n = input("Would you like to update your list? (y/n) ")
+    else:
+        app = input("What college university have you finished applying to? ")
+        delcol(colleges)
+        y_n = input("Would you like to update your list? (y/n) ")
+
+print("Colleges you still need to apply to: ", colleges)
