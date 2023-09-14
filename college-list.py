@@ -17,7 +17,10 @@ while y_n == "y":
         y_n = input("Would you like to update your list? (y/n) ")
     else:
         app = input("What college university have you finished applying to? ")
-        delcol(colleges)
-        y_n = input("Would you like to update your list? (y/n) ")
+        if app not in colleges:
+            print("Error: That item is not in your list.")
+        else:
+            delcol(colleges)
+            y_n = input("Would you like to update your list? (y/n) ")
 
 print("Colleges you still need to apply to: ", colleges)
